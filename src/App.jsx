@@ -1,12 +1,15 @@
 import React from "react"
-
-
+import "./index.css"
+import ApiResult from "./components/api_result"
 function App() {
 
   return (
-    <p>
-      works
-    </p>
+    <div className="flex justify-cente flex-col  items-center " >
+      
+      <ApiResult />
+    
+    
+    </div>
   )
 }
 
