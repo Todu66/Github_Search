@@ -1,11 +1,11 @@
 import React from "react";
 
-function navigation() {
+function navigation(props) {
   return (
     <div className="flex justify-between  ml-auto mr-auto w-11/12 ">
       <p>devfinder</p>
 
-      <button>
+      <button onClick={props.toggleDarkMode}>
         DARK
       </button>
     </div>
