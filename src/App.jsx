@@ -1,18 +1,25 @@
-import React from "react"
-import "./index.css"
-import ApiResult from "./components/api_result"
-import Navigation from "./components/navigation"
-// #F6F8FF
+import React, { useState } from "react";
+import "./index.css";
+import ApiResult from "./components/api_result";
+import Navigation from './components/navigation';
+
 function App() {
+  const [darkMode, setDarkMode] = useState(true);
+
+  // Define the toggleDarkMode function after setDarkMode
+  function toggleDarkMode() {
+    setDarkMode(prevDarkMode => !prevDarkMode);
+  }
 
   return (
-    <div className="flex flex-col  items-center  h-screen gap-2 justify-start w-11/12 my-0 mx-auto">
-      <Navigation />
+    <div className={`flex justify-center flex-col items-center h-screen ${darkMode ? "dark" : ""}`}>
+      <Navigation
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
       <ApiResult />
-      
-    
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
